@@ -37,6 +37,6 @@ urlpatterns = [
     path('party/rm/<str:id>',viewsrsg.action),
     path('challanin/rm/<str:id>',viewsrsg.action2),
     path("genchallan",viewsrsg.genchallan)
-    
-    
 ]
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns # new
+urlpatterns += staticfiles_urlpatterns() # new
