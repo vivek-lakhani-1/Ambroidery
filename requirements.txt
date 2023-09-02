@@ -1,3 +1,3 @@
 reportlab
 django
-twillo
+twilio
