@@ -2,4 +2,4 @@ reportlab
 django
 twilio
 gunicorn
-jazzmin
+django-jazzmin
