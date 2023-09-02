@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challan in</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{% static 'css/challanin.css' %}" />
+      </head>
+      <body>
+      <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="/homepage">Logo</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="navbar-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+    
+          <li>
+            <a >Services</a>
+            <ul class="navbar-dropdown">
+              <li>
+                <a href="/challanin">Challan In</a>
+              </li>
+              <li>
+                <a href="/challanout">Challan Out</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          {% if user_reg == "no" %}
+              <li>
+                <a href="/login">Sign In</a>
+              </li>
+          {% else %}
+              <li>
+                <a href="/profile">Profile Edit</a>
+              </li>
+          {% endif %}
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+        <form action="/challanin" method="POST">
+          {% csrf_token %}
+        
+        <center><div class="container">
+           
+    
+                <div class="firm">
+                    <label>To : </label>
+                    <input type="text" name="firmn" required value="{{username}}" readonly>
+                </div>
+    
+                <div class="firstName">
+                <label>From :</label>
+               <select id = "options" name="from">
+                {% for i in data2 %}
+                <option value="{{i}}">{{i}}</option> 
+                {% endfor %} 
+                <!-- <option value="Second">Second</option>
+                <option value="Add Party" id="addingp">ADD PARTY</option> -->
+               </select>
+               <button class = "party">ADD</button>
+            </div>
+
+                <div class="lastName">
+                    <label id = "id">Item ID:</label>
+                    <input type="text" name="iid" id = "ln" maxlength="15" required>
+                </div>
+     
+                <div class="GSTno">
+                    <label>Item name:
+                    </label>
+                    <input type="text" maxlength="15" id = "inn" name="iiname" required>
+                </div>
+    
+                <div class="price">
+                    <label>Price :</label>
+                    <input type="number" max="99999" name="price" required>
+                </div>
+    
+                <div class="mobileno">
+                    <label>Delievery Date:</label>
+                    <input type="date" name="date" required>
+                </div>
+    
+        
+    
+               
+    
+                <div class="add">
+                  <input type="submit" class="user" value="Add Item">
+                  
+                </div>
+           
+        </div></center>
+        </form>
+        <hr style="margin-top: 4vh;">
+
+    <h2 class="table-heading">Items are:
+
+    </h2>
+
+        <div class="container-table">
+
+            <table>
+                <tr>
+                    <th>From</th>
+                    <th>Item name</th>
+                    <th>Item ID</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+                {% for a,i,j,k,l in data %}
+                <tr>
+                    <td>{{ a }}</td>
+                    <td>{{ j }}</td>
+                    <td>{{ i }}</td>
+                    <td>{{ k }}</td>
+                  
+                    <td>
+                      <form action="/challanin/rm/{{ l }}">
+                        
+                       <input type="submit" class="removing" value="Remove">
+                      </form>
+                      </td>
+                    
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div><center>
+          <form action="/genchallan" method="post">
+            {% csrf_token %}
+
+            <select id = "options" name="from">
+                {% for i in data2 %}
+                <option value="{{i}}">{{i}}</option>
+                {% endfor %}
+               </select>
+               <input type="submit" value="Generate" class="user">
+          </form>
+        </div>
+        </center>
+     
+
+        <script src="{% static 'js/challanin.js' %}"></script>
+        <script>
+          let btn = document.querySelector(".party");
+          btn.addEventListener("click", function(){
+            location.href = "/party"
+          })
+        </script>
+      </body>
+    </html>
+  </body>
+</html>

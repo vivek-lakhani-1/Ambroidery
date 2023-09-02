@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challan Out</title>
+    <link rel="stylesheet" href="{% static 'css/challanout.css' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+ <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="/">Logo</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="navbar-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+    
+          <li>
+            <a >Services</a>
+            <ul class="navbar-dropdown">
+              <li>
+                <a href="/challanin">Challan In</a>
+              </li>
+              <li>
+                <a href="/challanout">Challan Out</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          {% if user_reg == "no" %}
+              <li>
+                <a href="/login">Sign In</a>
+              </li>
+          {% else %}
+              <li>
+                <a href="/profile">Profile Edit</a>
+              </li>
+          {% endif %}
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+    <h1 class="heading">Get your challan here!!!</h1>
+    <hr>
+
+    <center><div class="main-container">
+
+        <div class="firm">
+            <label>From: </label>
+            <input type="text" class="firmn" required value="{{username}}" rea>
+        </div>
+        <hr>
+
+        <form action="/challanout" method="post">
+        {% csrf_token %}
+        <div class="firstName">
+            <label class="chl">Challan ID:</label>
+            
+            <select name="select" class="firstn">
+              {% for i in data %}
+              <option value="{{i}}">{{i}}</option>
+              {% endfor %}
+            </select>
+
+            
+        </div>
+    
+
+       
+
+        <div class="add">
+          <input type="submit" value="Get Invoice" class="user">
+            
+        </div>
+      </form>
+
+
+    </center>
+
+
+    <script src="{% static 'js/challanout.js' %}"></script>
+    
+  </body>
+</html>

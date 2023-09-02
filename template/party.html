@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Party</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{% static 'css/challanin.css' %}" />
+      </head>
+      <body>
+   <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="/">Logo</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="navbar-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+    
+          <li>
+            <a >Services</a>
+            <ul class="navbar-dropdown">
+              <li>
+                <a href="/challanin">Challan In</a>
+              </li>
+              <li>
+                <a href="/challanout">Challan Out</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          {% if user_reg == "no" %}
+              <li>
+                <a href="/login">Sign In</a>
+              </li>
+          {% else %}
+              <li>
+                <a href="/profile">Profile Edit</a>
+              </li>
+          {% endif %}
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+
+        <center><div class="container">
+            
+            <form action="/party" method="POST">
+               {% csrf_token %}
+                <div class="firm">
+                    <label>firmname : </label>
+                    <input type="text" name="firmname" required>
+                </div>
+    
+
+
+                <div class="lastName">
+                    <label>GST No:</label>
+                    <input type="text" name="gstno" maxlength="15" required>
+                </div>
+     
+                <div class="GSTno">
+                    <label>Address
+                    </label>
+                    <input type="text"  name="add" required>
+                </div>
+    
+                <div class="price">
+                    <label>Mobile No :</label>
+                    <input type="number" max="9999999999999" name="number" required>
+                </div>
+    
+
+    
+                <div class="add">
+                   <input type="submit" class="user">
+                </div>
+           
+        </div></center>
+        </form>
+    
+    <hr style="margin-top: 4vh;">
+
+    <h2 class="table-heading">Connected Parties are:
+
+    </h2>
+
+        <div class="container-table">
+
+            <table>
+                <tr>
+                    
+                    <th>Firm name</th>
+                    <th>GST No</th>
+                    <th>Address</th>
+                    <th>Mobile No</th>
+                    <th>Action</th>
+                </tr>
+                {% for i,j,k,l in data %}
+                <tr>
+                  
+                    <td>{{ i }}</td>
+                    <td>{{ j }}</td>
+                    <td>{{ k }}</td>
+                    <td>{{ l }}</td>
+                    <td>
+                      <form action="/party/rm/{{ j }}">
+                        
+                       <input type="submit" class="removing" value="Remove">
+                      </form>
+                      </td>
+                    
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+     
+
+        <script src="{% static 'js/challanin.js' %}"></script>
+      </body>
+    </html>
+  </body>
+</html>

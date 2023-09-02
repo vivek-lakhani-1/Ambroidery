@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/addparty.css">
+  </head>
+  <body>
+      <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="/">Logo</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="navbar-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+    
+          <li>
+            <a >Services</a>
+            <ul class="navbar-dropdown">
+              <li>
+                <a href="/challanin">Challan In</a>
+              </li>
+              <li>
+                <a href="/challanout">Challan Out</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          {% if user_reg == "no" %}
+              <li>
+                <a href="/login">Sign In</a>
+              </li>
+          {% else %}
+              <li>
+                <a href="/profile">Profile Edit</a>
+              </li>
+          {% endif %}
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+    
+
+    <center><div class="container">
+        <div class="lastName">
+            <label>Firm Name:</label>
+            <input type="text" name="lastn" maxlength="15" required>
+        </div>
+
+        <div class="GSTno">
+            <label class="gstl">GST No:
+            </label>
+            <input type="text" maxlength="15" name="gstno" required>
+        </div>
+
+        <div class="price">
+            <label class="add">Address:</label>
+           <input type="text" name = "address" required>
+        </div> 
+
+        <div class="mobileno">
+            <label>Mobile No:</label>
+            <input type="number" name="mobno" required>
+        </div>
+
+
+
+       
+
+        <div class="add">
+            <button class="user">
+                Add Item
+            </button>
+        </div>
+    </div></center>
+
+
+
+    <hr style="margin-top: 4vh;">
+
+    <h2 class="table-heading">Party are:
+
+    </h2>
+
+        <div class="container-table">
+
+            <table>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Item name</th>
+                    <th>Item ID</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Chocolates</td>
+                    <td>111</td>
+                    <td>20$</td>
+                    <td><button class="adding">add</button> <button class="removing">remove </button></td>
+                    
+                </tr>
+            </table>
+        </div>
+        <script src="./js/addparty.js"></script>
+</body>
+</html>

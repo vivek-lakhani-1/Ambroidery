@@ -1,0 +1,365 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Tech Project</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body style="overflow-x:hidden;">
+     <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="/">Logo</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="navbar-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+    
+          <li>
+            <a >Services</a>
+            <ul class="navbar-dropdown">
+              <li>
+                <a href="/challanin">Challan In</a>
+              </li>
+              <li>
+                <a href="/challanout">Challan Out</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          {% if user_reg == "no" %}
+              <li>
+                <a href="/login">Sign In</a>
+              </li>
+          {% else %}
+              <li>
+                <a href="/profile">Profile Edit</a>
+              </li>
+          {% endif %}
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+
+    <div class="div-maincontainer">
+      <h1>EMBRO TECH SERVICES</h1>
+      <p class="sub-div-container">Way of Easiness!!! Use Billing Software</p>
+      <button class="use">Use Service</button>
+    </div>
+    <div data-aos="fade-up">
+    <div class="img-texts">
+      <div class="container-text">
+        <div class="img">
+          <img
+            src="https://images.pexels.com/photos/2564890/pexels-photo-2564890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="div-img"
+            alt="div-img-1"
+          />
+        </div>
+        <div class="text">
+          <p class="p-text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius
+            aspernatur modi cupiditate perspiciatis, expedita nam aperiam labore
+            tempora consequuntur quo voluptatibus earum laudantium! Illo eos,
+            dolores minus dolorem accusantium quasi autem fuga delectus officia
+            eum quae, expedita veritatis optio unde.
+          </p>
+        </div>
+      </div>
+
+      <div class="container-text2">
+        <div class="text">
+          <p class="p-text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius
+            aspernatur modi cupiditate perspiciatis, expedita nam aperiam labore
+            tempora consequuntur quo voluptatibus earum laudantium! Illo eos,
+            dolores minus dolorem accusantium quasi autem fuga delectus officia
+            eum quae, expedita veritatis optio unde.
+          </p>
+        </div>
+
+        <div class="img">
+          <img
+            src="https://images.pexels.com/photos/1122844/pexels-photo-1122844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="div-img img2"
+            alt="div-img-1"
+          />
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+    <div class="cards">
+        <div data-aos="flip-right">
+      <div class="card1">
+        <div>
+          <img
+            src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="c-img1"
+            class="c-img"
+          />
+        </div>
+    
+        <div class="c-text">
+          <h3 class="heading">On Time Delivery</h3>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, ea?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
+          dolorum quam debitis recusandae. Sequi id eum quaerat repudiandae,
+          placeat, consequuntur ab reiciendis magnam eveniet, soluta unde modi
+          laudantium cum nisi.
+        </div>
+    </div>
+      </div>
+
+      <div data-aos="flip-right">
+      <div class="card2">
+        <div>
+          <img
+            src="https://images.pexels.com/photos/1325766/pexels-photo-1325766.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="c-img1"
+            class="c-img"
+          />
+        </div>
+        <div class="c-text">
+          <h3 class="heading">Proper Meetings</h3>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, ea?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
+          dolorum quam debitis recusandae. Sequi id eum quaerat repudiandae,
+          placeat, consequuntur ab reiciendis magnam eveniet, soluta unde modi
+          laudantium cum nisi.
+        </div>
+      </div>
+    </div>
+
+
+    <div data-aos="flip-right">
+      <div class="card3">
+        <div>
+          <img
+            src="https://images.pexels.com/photos/552598/pexels-photo-552598.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="c-img1"
+            class="c-img"
+          />
+        </div>
+
+        <div class="c-text">
+          <h3 class="heading">24 x 7 Service</h3>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, ea?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
+          dolorum quam debitis recusandae. Sequi id eum quaerat repudiandae,
+          placeat, consequuntur ab reiciendis magnam eveniet, soluta unde modi
+          laudantium cum nisi.
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+    <div data-aos="zoom-in">
+    <div class="rating">
+    <div class="heading-rat">
+      <h1 class="r-heading">our user</h1>
+    </div>
+    <div class="user-rating">
+      <div class="r-div">
+        <img
+          class="r-img"
+          src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="r-img"
+        />
+      </div>
+      <div class="text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+        nostrum commodi possimus quaerat impedit adipisci! Dolorem eius dolores
+        tempore quaerat velit. Perspiciatis ea aliquam doloribus omnis officiis
+        iste beatae atque! Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Repudiandae, quae! Esse voluptatibus eveniet omnis vero eos
+        recusandae cum molestias assumenda aliquid beatae? Velit voluptatum
+        officiis quo consectetur! Ab qui rem deleniti quas. Quidem tempora,
+        eligendi illo vel pariatur iusto natus quaerat nobis dicta distinctio,
+        optio id, obcaecati nesciunt facere architecto?
+
+        <h3>Fantastic Service !!!!</h3>
+      </div>
+    </div>
+</div>
+</div>
+
+<div id="chatbot-container" style="display: none">
+  <div id="chatbot-interface">
+    <div id="chatbot-header">
+      <p>Want to know something? - Let's chat</p>
+    </div>
+    <div id="chatbot-chat">
+      <div class="chatbot-messages chatbot-received-messages">
+        <p>With what can I help you today?</p>
+      </div>
+      <div class="chatbot-messages chatbot-received-messages">
+        <p>Hello! I am Vatsal, Embro Tech's chatbot</p>
+      </div>
+    </div>
+    <div id="chatbot-footer">
+      <div id="chatbot-input-container">
+        <input type="text" id="chatbot-input" name="chatbot-input" placeholder="Type a command here...">
+      </div>
+      <div id="chatbot-new-message-send-button">
+        <i class="material-icons" id="send-icon">send</i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="chatbot-open-container">
+  <i class="material-icons" id="open-chat-button">chat</i>
+  <i class="material-icons" id="close-chat-button" style="display: none">close</i>
+</div>
+
+
+
+    <div class="footer">
+        <div data-aos="flip-up">
+        <div class="contact">
+            <h1 class="sub-heading1">Want to Know Us More</h1>
+      <h2 class="sub-heading2">Contact us for Sure!!!!</h2>
+    </div>
+    
+    <div class="links-img">
+        <div class="menus">
+            <ul>
+                <li class="m-li">FAQ's</li>
+                <li class="m-li">Queries</li>
+                <li class="m-li">Opportunities</li>
+            </ul>
+        </div>
+        
+        <div class="images">
+            <div class="links">
+                <img
+                src="{% static 'images/facebook.png' %}"
+                alt="linked-in"
+                class="imgs"
+                id="img1"
+                />
+            </div>
+            <div class="links">
+                <img
+                src="{% static 'images/envelope-solid.png' %}"
+                alt="facebook"
+                class="imgs"
+                id = "img2"
+                />
+            </div>
+            <div class="links">
+                <img
+                src="{% static 'images/instagram.png' %}"
+                alt="email"
+                class="imgs"
+                id = "img3"
+                />
+            </div>
+        </div>
+    </div>
+    <center><button class="ff">Fill Form</button></center>
+</div>
+</div>
+</div>
+
+<footer>
+    Copyrights Reserved &copy; since 2023
+</footer>
+    <script src="{% static 'js/homepage.js' %}"></script>
+    <script>
+  AOS.init();
+</script>
+
+<script>
+  const chat = document.getElementById("chatbot-chat");
+
+
+$("#chatbot-open-container").click(function(){
+  $("#open-chat-button").toggle(200);
+  $("#close-chat-button").toggle(200);
+  $("#chatbot-container").fadeToggle(200);
+});
+
+document.getElementById("chatbot-new-message-send-button").addEventListener("click", newInput);
+
+document.getElementById("chatbot-input").addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      newInput();
+    }
+});
+
+function newInput(){
+  newText = document.getElementById("chatbot-input").value;
+  if (newText != ""){
+    document.getElementById("chatbot-input").value = "";
+    addMessage("sent", newText);
+    generateResponse(newText);
+  }
+}
+
+
+function addMessage(type, text){
+  let messageDiv = document.createElement("div");
+  let responseText = document.createElement("p");
+  responseText.appendChild(document.createTextNode(text));
+  
+  if (type == "sent"){
+    messageDiv.classList.add("chatbot-messages", "chatbot-sent-messages");
+  } else if (type == "received"){
+    messageDiv.classList.add("chatbot-messages", "chatbot-received-messages");
+  }
+
+  messageDiv.appendChild(responseText);
+  chat.prepend(messageDiv);
+}
+
+
+
+
+function generateResponse(prompt){
+  
+  addMessage("received", "Great to hear that!");
+}
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Update</title>
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{% static 'js/navbar.js' %}"></script>
+  <script>
+
+
+
+  </script>
+
+</head>
+
+<body>
+
+ <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="/">Logo</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="navbar-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+    
+          <li>
+            <a >Services</a>
+            <ul class="navbar-dropdown">
+              <li>
+                <a href="/challanin">Challan In</a>
+              </li>
+              <li>
+                <a href="/challanout">Challan Out</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          {% if user_reg == "no" %}
+              <li>
+                <a href="/login">Sign In</a>
+              </li>
+          {% else %}
+              <li>
+                <a href="/profile">Profile Edit</a>
+              </li>
+          {% endif %}
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <div class="content">
+    <h1>Update Profile</h1>
+  </div>
+
+  <div class="container">
+    <form method="post" id = "form">
+      {% csrf_token %}
+      <div class="div">
+        <div class="firstname">
+          <label>Firm Name</label>
+          <div class="input">
+            <input type="text" name="first" id="firmname" value="{{firm}}" /> <button class="edit" id="edit1" >EDIT</button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="div">
+        <div class="GSI">
+          <label>GST No</label>
+          <div class="input">
+            <input type="text" id = "gstno" name="gst" value="{{gst}}"/> <button class="edit" id = "edit2">EDIT</button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="div">
+        <div class="MobileNo">
+          <label>Mobile Number</label>
+          <div class="input">
+            <input type="text" id = "mobilen" name="mobile" value="{{mobile}}"/> <button class="edit" id = "edit3">EDIT</button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="div">
+        <div class="GSI">
+          <label>Pan Card</label>
+          <div class="input">
+            <input type="text" id = "pn" name="pancard" value="{{pancard}}"/> <button id = "edit4" class="edit">EDIT</button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="div">
+        <div class="Address">
+          <label>Address</label>
+          <div class="input">
+            <input type="text" id = "ad" name="address" class="address" value="{{address}}" />
+            <button class="edit" id = "edit5" >EDIT</button>
+          </div>
+        </div>
+      </div>
+      <div class="button">
+        <input type="submit" class="update" value="Update" id="submit" >
+      </div>
+    </form>
+
+  </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+
+
+
+  let form = document.getElementById("form")
+  function stopEventOnce(event) {
+  event.preventDefault();
+  $(this).unbind('submit',stopEventOnce);
+  return false;
+}
+$("form").bind('submit', stopEventOnce);
+  
+
+
+document.getElementById('firmname').readOnly = true;
+document.getElementById('gstno').readOnly = true;
+document.getElementById('mobilen').readOnly = true;
+document.getElementById('pn').readOnly = true;
+document.getElementById('ad').readOnly = true;
+
+
+document.getElementById('edit1').addEventListener("click", function(){
+  document.getElementById('firmname').readOnly = false;
+})
+
+document.getElementById('edit2').addEventListener("click", function(){
+  document.getElementById('gstno').readOnly = false;
+})
+
+document.getElementById('edit3').addEventListener("click", function(){
+  document.getElementById('mobilen').readOnly = false;
+})
+
+document.getElementById('edit4').addEventListener("click", function(){
+  docu
+  ment.getElementById('pn').readOnly = false;
+})
+
+document.getElementById('edit5').addEventListener("click", function(){
+  document.getElementById('ad').readOnly = false;
+})
+
+
+
+
+
+
+
+  
+</script>
+
+</html>

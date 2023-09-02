@@ -1,0 +1,495 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: "Poppins";
+}
+
+.navigation {
+    height: 55px;
+    background: linear-gradient(45deg, #171d24, #233952);
+}
+
+.brand {
+    position: absolute;
+    padding-left: 20px;
+    float: left;
+    line-height: 55px;
+    text-transform: uppercase;
+    font-size: 1.4em;
+}
+
+.brand a,
+.brand a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    float: left;
+    position: relative;
+}
+
+nav ul li a,
+nav ul li a:visited {
+    display: block;
+    padding: 0 20px;
+    line-height: 55px;
+    color: #fff;
+    background: #262626;
+    text-decoration: none;
+}
+
+nav ul li a {
+    background: transparent;
+    color: #FFF;
+}
+
+nav ul li a:hover,
+nav ul li a:visited:hover {
+    background: #655877;
+    color: #ffffff;
+}
+
+.navbar-dropdown li a {
+    background: #2581DC;
+}
+
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+    padding-left: 4px;
+    content: ' \025BE';
+}
+
+nav ul li ul li {
+    min-width: 190px;
+}
+
+nav ul li ul li a {
+    padding: 15px;
+    line-height: 20px;
+}
+
+.navbar-dropdown {
+    position: absolute;
+    display: none;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    height: 55px;
+    width: 70px;
+}
+
+@media only screen and (max-width: 800px) {
+    .nav-mobile {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+        padding: 55px 0 15px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul li {
+        float: none;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        line-height: 20px;
+        background: #262626;
+    }
+
+    nav ul li ul li a {
+        padding-left: 30px;
+    }
+
+    .navbar-dropdown {
+        position: static;
+    }
+
+    @media screen and (min-width:800px) {
+        .nav-list {
+            display: block !important;
+        }
+    }
+
+    #navbar-toggle {
+        position: absolute;
+        left: 18px;
+        top: 15px;
+        cursor: pointer;
+        padding: 10px 35px 16px 0px;
+    }
+
+    #navbar-toggle span,
+    #navbar-toggle span:before,
+    #navbar-toggle span:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 3px;
+        width: 30px;
+        background: #ffffff;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 300ms ease-in-out;
+    }
+
+    #navbar-toggle span:before {
+        top: -10px;
+    }
+
+    #navbar-toggle span:after {
+        bottom: -10px;
+    }
+
+    #navbar-toggle.active span {
+        background-color: transparent;
+    }
+
+    #navbar-toggle.active span:before,
+    #navbar-toggle.active span:after {
+        top: 0;
+    }
+
+    #navbar-toggle.active span:before {
+        transform: rotate(45deg);
+    }
+
+    #navbar-toggle.active span:after {
+        transform: rotate(-45deg);
+    }
+}
+
+
+
+
+
+
+.main-container{
+   
+    text-transform: uppercase;
+    margin-top: 9vh;
+    letter-spacing: 7px;
+    font-size: 3.8rem;
+    text-align: center
+}
+.main-container p{
+    color: rgb(109, 109, 109);
+}
+.description p{
+    width: 80vw;
+    text-align: justify;
+    margin: 3vh 2.3vw;
+    color: rgb(31, 28, 28);
+}
+.cards{
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.div-img{
+    margin-top: 4vh;
+    width: 150px;
+    border-radius: 80px;
+}
+
+.one{
+    margin-right: 2vw;
+    background-color: #f91942;
+    color: white;
+    flex-wrap: wrap;
+    width: 450px;
+    border: 2px solid  #f91942;
+    border-radius: 10px;
+    height: 550px;
+    cursor: pointer;
+}
+.two{
+    background-color: #f91942;
+    color: white;
+    flex-wrap: wrap;
+    width: 450px;
+    border: 2px solid  #f91942;
+    border-radius: 10px;
+    height: 550px;
+    cursor: pointer;
+}
+.div-description{
+    text-align: center;
+}
+.div-description h1{
+    margin: 5vh 0px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.view{
+    cursor: pointer;
+    margin-top: 10vh;
+    height: 56px;
+    width: 200px;
+    font-size: 1.45rem;
+    color: white;
+    background-color: rgb(42, 42, 241);
+    border: 1px solid white;
+    box-shadow: 0 7px 8px 0 #66f;
+    font-family: "Poppins";
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.view:hover{
+    background-color: #66f;
+}
+.views{
+    cursor: pointer;
+    margin-top: 10vh;
+    height: 56px;
+    width: 200px;
+    font-size: 1.45rem;
+    color: white;
+    background-color: rgb(42, 42, 241);
+    border: 1px solid white;
+    box-shadow: 0 7px 8px 0 #66f;
+    font-family: "Poppins";
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.views:hover{
+    background-color: #66f;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:1477px){
+    .cards{
+        height: 1200px;
+        display: grid;
+        padding-left: 2vw;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .one{
+        margin-right: 6vw;
+    }
+}
+@media screen and (max-width: 997px){
+    .one{
+        width: 500px;
+    }
+    .two{
+        width: 500px;
+    }
+}
+@media screen and (max-width: 1013px){
+    .cards{
+        margin: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0px;
+        margin-left: 0px;
+    
+    }
+    .one{
+       
+        margin-bottom: 11vh;
+        margin-right: 0px;
+        
+    }
+}
+@media screen and (max-width: 667px){
+    .one{
+        margin-left: 6vw;
+    }
+    .two{
+        margin-left: 6vw;
+    }
+}
+@media screen and (max-width: 584px){
+    .one{
+        margin-left: 10vw;
+    }
+    .two{
+        margin-left: 10vw;
+    }
+}
+.sub-heading{
+    margin-top: 3vh;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: normal;
+    text-transform: uppercase ;
+    letter-spacing: 3px;
+    font-size: 2.8rem;
+    color: rgb(71, 70, 70);
+}
+.links{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.divs-img{
+    border-radius: 20px;
+    cursor: pointer;
+    width: 5vw;
+}
+.github{
+    width: 45px;
+}
+.email{
+    width: 5vw ;
+}
+@media screen and (max-width: 800px){
+    .divs-img{
+        width: 8vw;
+    }
+    .email{
+        width: 8vw;
+    }
+}
+@media screen and (max-width: 523px){
+    .divs-img{
+        width: 47px;
+    }
+    .email{
+        width: 51px;
+    }
+}
+.footer{
+    text-align: center;
+    margin: 2vh 0px;
+    font-size: 2rem;
+    color: #3c4250;
+}
+
+
+.team-boxed {
+  color:#313437;
+  background-color:#eef4f7;
+}
+
+.team-boxed p {
+  color:#7d8285;
+}
+
+.team-boxed h2 {
+  font-weight:bold;
+  margin-bottom:40px;
+  padding-top:40px;
+  color:inherit;
+}
+
+@media (max-width:767px) {
+  .team-boxed h2 {
+    margin-bottom:25px;
+    padding-top:25px;
+    font-size:24px;
+  }
+}
+
+.team-boxed .intro {
+  font-size:16px;
+  max-width:500px;
+  margin:0 auto;
+}
+
+.team-boxed .intro p {
+  margin-bottom:0;
+}
+
+.team-boxed .people {
+  padding:50px 0;
+}
+
+.team-boxed .item {
+  text-align:center;
+}
+
+.team-boxed .item .box {
+  text-align:center;
+  padding:30px;
+  background-color:#fff;
+  margin-bottom:30px;
+}
+
+.team-boxed .item .name {
+  font-weight:bold;
+  margin-top:28px;
+  margin-bottom:8px;
+  color:inherit;
+}
+
+.team-boxed .item .title {
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#d0d0d0;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+.team-boxed .item .description {
+  font-size:15px;
+  margin-top:15px;
+  margin-bottom:20px;
+}
+
+.team-boxed .item img {
+  max-width:160px;
+}
+
+.team-boxed .social {
+  font-size:18px;
+  color:#a2a8ae;
+}
+
+.team-boxed .social a {
+  color:inherit;
+  margin:0 10px;
+  display:inline-block;
+  opacity:0.7;
+}
+
+.team-boxed .social a:hover {
+  opacity:1;
+}
+

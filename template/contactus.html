@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <title>Contact US</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="/">Logo</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="navbar-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+    
+          <li>
+            <a >Services</a>
+            <ul class="navbar-dropdown">
+              <li>
+                <a href="/challanin">Challan In</a>
+              </li>
+              <li>
+                <a href="/challanout">Challan Out</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          {% if user_reg == "no" %}
+              <li>
+                <a href="/login">Sign In</a>
+              </li>
+          {% else %}
+              <li>
+                <a href="/profile">Profile Edit</a>
+              </li>
+          {% endif %}
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+    
+
+
+
+    <div class="body-container">
+        <h1 class="heading-h1">Any Suggestions???</h1>
+        <h2 class="sub-heading">Let Us Know!!!</h2>
+      </div>
+
+      <div class="wrapper" style="margin-top: 20vh;">
+        <div class="title">
+          <h1>Reach Us</h1>
+        </div>
+        <form action="https://airform.io/vram51188@gmail.com" method="post">
+        <div class="contact-form">
+          <div class="input-fields">
+
+              <input type="text" class="input" placeholder="Name" required>
+              <input type="text" class="input" placeholder="Email Address" required>
+              <input type="text" class="input" placeholder="Phone" required>
+              <input type="text" class="input" placeholder="Subject" required>
+            </div>
+            <div class="msg">
+              <textarea placeholder="Message"></textarea>
+              <div class="btn"><button class="button">send</button></div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <script src="{% static 'js/contact.js' %}"></script>
+</body>
+</html>
